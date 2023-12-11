@@ -1,0 +1,11 @@
+{
+	"error": {
+		"no-device": "未偵測到錄音裝置"
+	},
+	"petal": "Petal Nudo",
+	"recorder": {
+		"start": "開始",
+		"stop": "停止",
+		"transcribing": "轉錄中"
+	}
+}

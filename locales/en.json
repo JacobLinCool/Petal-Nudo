@@ -1,0 +1,11 @@
+{
+	"error": {
+		"no-device": "No recording device detected"
+	},
+	"petal": "Petal Nudo",
+	"recorder": {
+		"start": "Start",
+		"stop": "Stop",
+		"transcribing": "Transcribing"
+	}
+}
