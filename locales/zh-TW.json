@@ -3,10 +3,23 @@
 	"error": {
 		"no-device": "未偵測到錄音裝置"
 	},
+	"fix": {
+		"fixing": "修正中",
+		"please-record-at-least-3-segments": "請先錄製至少三段"
+	},
+	"page": {
+		"fix": "修正",
+		"summary": "摘要",
+		"transcription": "轉錄"
+	},
 	"petal": "Petal Nudo",
 	"recorder": {
 		"start": "開始",
+		"start-recording-first": "請先開始錄製",
 		"stop": "停止",
 		"transcribing": "轉錄中"
+	},
+	"summary": {
+		"summarizing": "摘要製作中"
 	}
 }

@@ -62,7 +62,7 @@
 		try {
 			const form = new FormData();
 			form.append("audio", new Blob([segment.audio], { type: "audio/wav" }));
-			const res = await fetch("/api/transcript", {
+			const res = await fetch("/api/transcribe", {
 				method: "POST",
 				body: form,
 			});

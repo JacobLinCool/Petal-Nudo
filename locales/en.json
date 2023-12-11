@@ -3,10 +3,23 @@
 	"error": {
 		"no-device": "No recording device detected"
 	},
+	"fix": {
+		"fixing": "Correcting",
+		"please-record-at-least-3-segments": "Please record at least 3 segments"
+	},
+	"page": {
+		"fix": "Fix",
+		"summary": "Summary",
+		"transcription": "Transcribe"
+	},
 	"petal": "Petal Nudo",
 	"recorder": {
 		"start": "Start",
+		"start-recording-first": "Please start recording first",
 		"stop": "Stop",
 		"transcribing": "Transcribing"
+	},
+	"summary": {
+		"summarizing": "Summarizing in progress"
 	}
 }
