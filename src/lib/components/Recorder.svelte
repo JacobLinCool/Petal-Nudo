@@ -4,7 +4,7 @@
 	import { onDestroy, onMount } from "svelte";
 	import worklet from "@ricky0123/vad-web/dist/vad.worklet.bundle.min.js?url";
 	import silero from "@ricky0123/vad-web/dist/silero_vad.onnx?url";
-	import type { Segment } from "$lib/types";
+	import type { Segment, TranscriptionSegment } from "$lib/types";
 
 	export let stream: MediaStream;
 	export let segments: Segment[];
@@ -66,14 +66,12 @@
 				method: "POST",
 				body: form,
 			});
-			const data = await res.json();
+			const data: TranscriptionSegment[] = await res.json();
 			console.log(data);
-			segment.transcript = data.text;
+			segment.transcription = data;
 			segments = segments;
 		} catch (e) {
 			console.error(e);
-			segment.transcript = "ERROR";
-			segments = segments;
 		}
 	}
 </script>

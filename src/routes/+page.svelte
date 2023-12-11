@@ -48,8 +48,16 @@
 				</button>
 
 				<div class="prose flex-1">
-					{#if segment.transcript}
-						<p>{segment.transcript}</p>
+					{#if segment.transcription}
+						<p>
+							{#each segment.transcription as seg}
+								<span
+									class:text-warning={seg.prob > 0.3 && seg.prob < 0.7}
+									class:text-error={seg.prob <= 0.3}
+									class:opacity-30={seg.empty_prob > 0.6}>{seg.text}</span
+								>{" "}
+							{/each}
+						</p>
 					{:else}
 						<p class="animate-pulse">
 							{$t("recorder.transcribing")}
