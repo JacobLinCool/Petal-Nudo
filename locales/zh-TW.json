@@ -1,4 +1,5 @@
 {
+	"description": "整合 OpenAI Whisper 和 ChatGPT 的開源錄音器。",
 	"error": {
 		"no-device": "未偵測到錄音裝置"
 	},

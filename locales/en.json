@@ -1,4 +1,5 @@
 {
+	"description": "An open source recorder integrating OpenAI Whisper and ChatGPT.",
 	"error": {
 		"no-device": "No recording device detected"
 	},
