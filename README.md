@@ -20,6 +20,7 @@ Currently, we do not have a post-processing pipeline. However, we have a few ide
 
 - [ ] Transcription Correction
 - [ ] Text Summarization (with many different modes?)
+  - [x] Basic Summarization
 - [ ] Mindmap Generation
 - [ ] Visual Input Enhancements (with GPT-4 Vision, for table and diagram understanding)
 

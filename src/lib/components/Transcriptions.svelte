@@ -22,14 +22,15 @@
 				<Icon icon="mdi:waveform" />
 			</button>
 
-			<div class="prose flex-1">
+			<div class="prose flex-1 break-words">
 				{#if segment.transcription}
 					<p>
 						{#each segment.transcription as seg}
 							<span
-								class:text-warning={seg.prob > 0.3 && seg.prob < 0.7}
-								class:text-error={seg.prob <= 0.3}
-								class:opacity-30={seg.empty_prob > 0.6}>{seg.text}</span
+								class:text-amber-600={seg.prob > 0.3 && seg.prob < 0.7}
+								class:text-red-600={seg.prob <= 0.3}
+								class:opacity-40={seg.empty_prob > 0.6 && seg.empty_prob < 0.8}
+								class:opacity-20={seg.empty_prob >= 0.8}>{seg.text}</span
 							>{" "}
 						{/each}
 					</p>

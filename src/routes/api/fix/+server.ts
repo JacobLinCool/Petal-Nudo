@@ -4,11 +4,13 @@ import type { RequestHandler } from "./$types";
 
 export const POST: RequestHandler = async ({ request }) => {
 	const segments: TranscriptionSegment[] = await request.json();
+	console.log(segments);
 
 	const transcription = segments
 		.filter((segment) => segment.empty_prob <= 0.75 || segment.prob > 0.7)
 		.map((segment) => segment.text)
 		.join(" ");
+	console.log(transcription);
 
 	const res = await openai.chat.completions.create({
 		model: "gpt-3.5-turbo-1106",
@@ -17,7 +19,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			{
 				role: "system",
 				content:
-					'You are receiving a transcription. The transcription may be inaccurate due to the quality of the audio and ASR model. Please fix the possible errors in the transcription wthout changing the meaning of the sentence. You can also add punctuation to the transcription. Respond with JSON object { "fixed": "the fixed transcription" }.',
+					'You are receiving a transcription from user. The transcription may be inaccurate due to the quality of the audio and ASR model. Please fix the possible errors in the transcription wthout changing the meaning of the sentence. You can also add punctuation to the transcription. Respond with JSON object { "fixed": "the fixed transcription" }.',
 			},
 			{
 				role: "user",

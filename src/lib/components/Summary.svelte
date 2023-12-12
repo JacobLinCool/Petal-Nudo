@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Segment } from "$lib/types";
+	import type { Segment, TranscriptionSegment } from "$lib/types";
 	import { onMount } from "svelte";
 	import { t } from "svelte-i18n";
 
@@ -14,7 +14,12 @@
 		try {
 			const res = await fetch("/api/summary", {
 				method: "POST",
-				body: JSON.stringify(segments),
+				body: JSON.stringify(
+					segments.reduce(
+						(acc, cur) => acc.concat(cur.transcription || []),
+						[] as TranscriptionSegment[],
+					),
+				),
 			});
 			const data: { summary: string } = await res.json();
 			console.log(data);
@@ -35,8 +40,8 @@
 			{$t("fix.please-record-at-least-3-segments")}
 		</p>
 	{:else if summary}
-		{summary}
+		<p class="prose">{summary}</p>
 	{:else}
-		{$t("summary.summarizing")}
+		<p class="animate-pulse">{$t("summary.summarizing")}</p>
 	{/if}
 </div>

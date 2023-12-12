@@ -17,7 +17,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			{
 				role: "system",
 				content:
-					'You are receiving a transcription. The transcription may be inaccurate due to the quality of the audio and ASR model. Please summarize the transcriptio without losing important information. Respond with JSON object { "summary": "the summary" }.',
+					'You are receiving a transcription from user. The transcription may be inaccurate due to the quality of the audio and ASR model. Please summarize the transcriptio without losing important information. Respond with JSON object { "summary": "the summary" }.',
 			},
 			{
 				role: "user",

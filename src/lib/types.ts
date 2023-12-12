@@ -6,7 +6,7 @@ export interface Segment {
 
 export interface Project {
 	segments: Segment[];
-	summaries: Record<string, string>;
+	post: Record<string, string>;
 }
 
 export interface TranscriptionSegment {

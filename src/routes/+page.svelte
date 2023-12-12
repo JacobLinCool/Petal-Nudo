@@ -8,7 +8,6 @@
 	import Summary from "$lib/components/Summary.svelte";
 
 	let error = "";
-	let stream: MediaStream | null = null;
 	let segments: Segment[] = [];
 	let page: "transcription" | "fix" | "summary" = "transcription";
 
@@ -19,15 +18,6 @@
 			error = $t("error.no-device");
 			return;
 		}
-
-		stream = await navigator.mediaDevices.getUserMedia({
-			audio: {
-				channelCount: 1,
-				echoCancellation: true,
-				autoGainControl: true,
-				noiseSuppression: true,
-			},
-		});
 	}
 </script>
 
@@ -70,8 +60,6 @@
 	</div>
 
 	<div class="flex h-32 w-full justify-center pt-2">
-		{#if stream}
-			<Recorder {stream} bind:segments />
-		{/if}
+		<Recorder bind:segments />
 	</div>
 </div>
