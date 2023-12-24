@@ -21,7 +21,7 @@
 		"@changesets/cli": "^2.27.1",
 		"@iconify/svelte": "^3.1.4",
 		"@playwright/test": "^1.40.1",
-		"@ricky0123/vad-web": "^0.0.14",
+		"@ricky0123/vad-web": "^0.0.16",
 		"@sveltejs/adapter-auto": "^2.1.1",
 		"@sveltejs/kit": "^1.28.0",
 		"@tailwindcss/typography": "^0.5.10",
